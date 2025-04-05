@@ -1,12 +1,13 @@
 {
   "name": "checho-challenge-ui",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/checho-challenge-ui.umd.js",
   "module": "./dist/checho-challenge-ui.es.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src/**/*.scss"
   ],
   "scripts": {
     "dev": "vite",
