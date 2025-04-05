@@ -1,7 +1,4 @@
-@use "./colors" as *;
-@use "./reset" as *;
-@use "./fonts" as *;
-@use "./variables.scss" as *;
+@use "checho-challenge-ui/styles/index.scss";
 
 html {
   font-size: 16px;
@@ -10,7 +7,7 @@ html {
 body {
   background-color: var(--Color-gray-800);
   color: var(--Color-gray-500);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--Font-family);
   font-size: 1rem;
   font-weight: 300;
 }

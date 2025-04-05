@@ -1,5 +1,0 @@
-@use "sass:meta";
-
-@function is-map($var) {
-  @return meta.type-of($var) == "map";
-}

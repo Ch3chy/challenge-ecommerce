@@ -17,7 +17,6 @@ export default defineConfig(({ command }) => ({
         : {}),
 
       "@": "/src",
-      "@styles": "/src/base/styles",
     },
   },
 }));
