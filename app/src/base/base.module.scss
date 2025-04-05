@@ -1,0 +1,6 @@
+@use "@styles/mixins/responsive";
+
+.principalMain {
+  @include responsive.apply(md) {
+  }
+}

@@ -1,11 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Core from "@/core";
+import Base from "@/base";
 
-import "@styles/main.scss";
+import "@styles/globals.scss";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Core />
+    <Base />
   </StrictMode>
 );

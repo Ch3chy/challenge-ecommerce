@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
-import styles from "Core.modules.scss";
+import styles from "./base.module.scss";
 
-const Core: FC = () => {
+const Base: FC = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <main className={styles.principalMain}>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,8 +28,8 @@ const Core: FC = () => {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </main>
   );
 };
 
-export default Core;
+export default Base;

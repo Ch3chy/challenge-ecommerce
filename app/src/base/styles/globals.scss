@@ -1,0 +1,14 @@
+@use "./colors" as *;
+@use "./reset" as *;
+@use "./variables.scss" as *;
+
+body {
+  background-color: var(--Color-gray-700);
+}
+
+:root {
+    
+}
+
+@media (prefers-color-scheme: light) {
+}
