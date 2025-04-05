@@ -43,6 +43,24 @@ $colors: (
 
 Modifica los valores según tus necesidades y los cambios se reflejarán automáticamente en los estilos de la aplicación.
 
+## 📖 Documentación de Componentes con Storybook
+
+La librería está integrada con **Storybook**, una herramienta que permite visualizar y documentar cada componente de manera interactiva. 
+
+### 📌 Cómo ejecutar Storybook
+
+Para iniciar Storybook en tu entorno local, ejecuta el siguiente comando:
+
+```sh
+npm run storybook
+```
+
+Esto abrirá una interfaz en tu navegador donde podrás explorar todos los componentes disponibles, junto con sus propiedades (`props`), ejemplos de uso y variaciones.
+
+### 📌 Documentación de Componentes
+
+Cada componente está documentado en Storybook con ejemplos prácticos y configuraciones personalizables. Esto facilita la comprensión y reutilización de los componentes en diferentes proyectos.
+
 ## 🚀 Publicación en npm
 
 Para publicar la librería en npm, asegúrate de haber iniciado sesión en tu cuenta de npm:
