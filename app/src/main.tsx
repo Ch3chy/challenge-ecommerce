@@ -1,11 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Base from "@/base";
-
 import "@styles/globals.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BaseRoutes } from "./base";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Base />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<BaseRoutes />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
