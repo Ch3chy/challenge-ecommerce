@@ -1,5 +1,5 @@
 {
-  "name": "challenge-ecommerce",
+  "name": "challenge-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "prepare": "npx lefthook install"
   },
   "workspaces": [
-    "app"
+    "app",
+    "ui"
   ],
   "dependencies": {
     "react": "^18.3.1",
