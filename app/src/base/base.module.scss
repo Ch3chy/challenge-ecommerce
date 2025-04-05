@@ -1,6 +1,43 @@
 @use "@styles/mixins/responsive";
 
 .principalMain {
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 1rem;
   @include responsive.apply(md) {
+    align-items: center;
   }
+}
+
+.appContainer {
+  background-color: var(--Color-white);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--Grid-lg);
+  overflow: auto;
+  width: 100%;
+
+  @include responsive.apply(lg) {
+    aspect-ratio: 16/9;
+    align-items: stretch;
+    border-radius: 2rem;
+    flex-direction: row;
+    min-height: 700px;
+  }
+}
+
+.sideMenu {
+  background-color: var(--Color-blue-500);
+  @include responsive.apply(lg) {
+    width: 200px;
+  }
+}
+
+.appMain {
+  flex: 1;
+  overflow: auto;
 }
