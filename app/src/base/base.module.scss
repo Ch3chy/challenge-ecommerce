@@ -1,4 +1,4 @@
-@use "checho-challenge-ui/styles/mixins/responsive";
+@use "checho-challenge-ui/styles/mixins";
 
 .principalMain {
   align-items: stretch;
@@ -7,7 +7,7 @@
   min-height: 100vh;
   min-width: 100vw;
   padding: 1rem;
-  @include responsive.apply(md) {
+  @include mixins.responsive(md) {
     align-items: center;
   }
 }
@@ -21,7 +21,7 @@
   overflow: auto;
   width: 100%;
 
-  @include responsive.apply(lg) {
+  @include mixins.responsive(lg) {
     aspect-ratio: 16/9;
     align-items: stretch;
     border-radius: 2rem;
@@ -32,7 +32,7 @@
 
 .sideMenu {
   background-color: var(--Color-blue-500);
-  @include responsive.apply(lg) {
+  @include mixins.responsive(lg) {
     width: 200px;
   }
 }
