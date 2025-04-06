@@ -1,7 +1,7 @@
 {
   "name": "checho-challenge-ui",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/checho-challenge-ui.umd.js",
   "module": "./dist/checho-challenge-ui.es.js",
   "types": "./dist/index.d.ts",
@@ -41,6 +41,12 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/checho-challenge-ui.es.js",
       "require": "./dist/checho-challenge-ui.umd.js"
+    },
+    "./styles/index.scss": {
+      "default": "./src/styles/index.scss"
+    },
+    "./styles/mixins": {
+      "default": "./src/styles/_mixins.scss"
     }
   }
 }

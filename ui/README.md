@@ -43,6 +43,24 @@ $colors: (
 
 Modifica los valores según tus necesidades y los cambios se reflejarán automáticamente en los estilos de la aplicación.
 
+### 📌 Uso de Mixins
+
+Para integrar los mixins en tus estilos, utiliza la siguiente instrucción:
+
+```scss
+@use "checho-challenge-ui/styles/mixins";
+```
+
+Luego, puedes aplicar los mixins donde los necesites. Por ejemplo, para aplicar estilos responsivos:
+
+```scss
+@include mixins.responsive(md) {
+  align-items: center;
+}
+```
+
+Esto permite aplicar estilos específicos basados en los puntos de quiebre definidos en la librería.
+
 ## 📖 Documentación de Componentes con Storybook
 
 La librería está integrada con **Storybook**, una herramienta que permite visualizar y documentar cada componente de manera interactiva. 

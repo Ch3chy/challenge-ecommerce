@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../variables/breakpoints";
 
-@mixin apply($breakpoint, $direction: min, $query: media) {
+@mixin responsive($breakpoint, $direction: min, $query: media) {
   @if map.has-key(breakpoints.$breakpoints, $breakpoint) {
     $breakpoint-values: map.get(breakpoints.$breakpoints, $breakpoint);
     $breakpoint-min: map.get($breakpoint-values, min);
