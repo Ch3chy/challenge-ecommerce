@@ -21,13 +21,17 @@ jobs:
         with:
           node-version: 22.14.0
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps --force
+      - name: Upgrade npm
+        run: npm install -g npm@latest
 
-      - name: Rebuild dependencies
+      - name: Install dependencies
+        run: npm install
+
+      - name: Rebuild native modules (lefthook fix)
         run: npm rebuild
 
       - name: Publish to Chromatic
-        run: npm run chromatic --workspace=checho-challenge-ui
+        working-directory: ./ui
+        run: npm run chromatic
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
