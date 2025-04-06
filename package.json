@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:app": "npm run build --workspace=ui && npm run build --workspace=app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npx lefthook install"
   },
