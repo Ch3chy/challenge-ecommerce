@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# Checho Challenge App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📦 Descripción
 
-Currently, two official plugins are available:
+Esta es la aplicación principal del proyecto **challenge-ecommerce**, diseñada para mostrar productos de manera interactiva y simular compra en un carrito. Utiliza la librería de componentes reutilizables **Checho Challenge UI** para garantizar consistencia en el diseño y funcionalidad.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Cómo correr en local
 
-## Expanding the ESLint configuration
+Sigue estos pasos para ejecutar la aplicación en tu entorno local:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Asegúrate de haber instalado las dependencias del proyecto raíz:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+   ```sh
+   npm install
+   ```
+
+2. Navega al directorio de la aplicación:
+
+   ```sh
+   cd app
+   ```
+
+3. Inicia el servidor de desarrollo:
+
+   ```sh
+   npm run dev
+   ```
+
+4. Abre tu navegador y accede a la URL proporcionada (por defecto, `http://localhost:5173`).
+
+## 🛠️ Generar el build
+
+Para generar el build de producción, ejecuta el siguiente comando desde el directorio de la aplicación:
+
+```sh
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Esto generará los archivos optimizados en la carpeta `dist`. Puedes previsualizar el build con:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run preview
 ```
+
+Este comando iniciará un servidor local para inspeccionar la aplicación generada.
+
+## 🚀 CI/CD con AWS Amplify
+
+El proyecto utiliza **AWS Amplify** para configurar un flujo de integración y entrega continua (CI/CD). Esto permite que los cambios realizados en el repositorio se desplieguen automáticamente en un entorno de prueba o producción.
+
+### 🌐 URL de la App Desplegada
+
+Puedes acceder a la aplicación desplegada en el siguiente enlace:
+
+[https://main.d1u5ndcqkrupol.amplifyapp.com/](https://main.d1u5ndcqkrupol.amplifyapp.com/)
+
+### 📌 Ventajas de AWS Amplify
+
+1. **Automatización Completa**: Amplify detecta automáticamente los cambios en el repositorio y ejecuta los pasos de construcción y despliegue.
+3. **Escalabilidad**: AWS Amplify maneja automáticamente la escalabilidad del entorno, asegurando un rendimiento óptimo.
+4. **Integración con Git**: Compatible con el repositorio de GitHub
+5. **Historial de Despliegues**: Permite revertir fácilmente a versiones anteriores en caso de errores.
+
+### 📌 Cómo funciona
+
+1. **Conexión del Repositorio**: Amplify está conectado al repositorio de GitHub del proyecto.
+2. **Configuración del Build**: El archivo `amplify.yml` define los pasos de construcción y despliegue.
+3. **Despliegue Automático**: Cada vez que se realiza un push en main, Amplify ejecuta el flujo de CI/CD.

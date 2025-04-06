@@ -79,6 +79,12 @@ Esto abrirá una interfaz en tu navegador donde podrás explorar todos los compo
 
 Cada componente está documentado en Storybook con ejemplos prácticos y configuraciones personalizables. Esto facilita la comprensión y reutilización de los componentes en diferentes proyectos.
 
+### 🌐 Storybook Desplegado
+
+Puedes acceder al Storybook desplegado en el siguiente enlace:
+
+[Storybook - Checho Challenge UI](https://67f0e6620850b0c0086cf36f-ftkqokulbi.chromatic.com/)
+
 ## 🚀 Publicación en npm
 
 Para publicar la librería en npm, asegúrate de haber iniciado sesión en tu cuenta de npm:
