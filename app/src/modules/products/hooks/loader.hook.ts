@@ -19,7 +19,16 @@ export const useProductsLoader = () => {
   const loadCategories = async (products: Product[]) => {
     const categories = products.map((product) => product.category);
     const uniqueCategories = [...new Set(categories)];
-    setCategories(uniqueCategories);
+
+    setCategories(
+      uniqueCategories.map((category) => {
+        const product = products.find((p) => p.category === category);
+        return {
+          name: category,
+          image: product?.image || "",
+        };
+      })
+    );
   };
 
   return { loadProducts };

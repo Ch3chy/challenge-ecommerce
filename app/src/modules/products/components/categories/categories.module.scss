@@ -1,0 +1,16 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.categories {
+  align-items: stretch;
+  display: flex;
+  gap: 0.75rem;
+
+  @include mixins.responsive(md) {
+    gap: 1rem;
+  }
+}
+
+.item {
+  display: flex;
+  text-decoration: none;
+}

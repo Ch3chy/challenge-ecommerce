@@ -1,3 +1,4 @@
+import { Category } from "./category.type";
 import { Product } from "./product.type";
 
 export type ProductsStore = {
@@ -5,6 +6,6 @@ export type ProductsStore = {
   getProuct: (id: number) => Product | undefined;
   setProducts: (products: Product[]) => void;
 
-  categories: string[];
-  setCategories: (categories: string[]) => void;
+  categories: Category[];
+  setCategories: (categories: Category[]) => void;
 };

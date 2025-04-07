@@ -1,0 +1,56 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.category {
+  align-items: center;
+  background-color: var(--Color-white);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  width: 80px;
+
+  &:hover,
+  &.categoryActive {
+    background-color: var(--Color-yellow-500);
+    .imageContainer {
+      border-color: var(--Color-yellow-500);
+      .image {
+        filter: none;
+      }
+    }
+    .name {
+      color: var(--Color-gray-300);
+    }
+  }
+
+  @include mixins.responsive(md) {
+    gap: 0.75rem;
+    width: 110px;
+    .imageContainer {
+      padding: 0.75rem;
+    }
+  }
+}
+
+.imageContainer {
+  background-color: var(--Color-white);
+  border: 1px solid var(--Color-gray-800);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  width: 100%;
+  .image {
+    aspect-ratio: 1/1;
+    display: block;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.name {
+  color: var(--Color-gray-600);
+  font-size: 0.75rem;
+  text-align: center;
+}
