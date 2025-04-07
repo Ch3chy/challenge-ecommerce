@@ -1,0 +1,21 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.titleContainer {
+  align-items: center;
+  display: flex;
+  font-size: 1.375rem;
+  justify-content: space-between;
+
+  @include mixins.responsive(md) {
+    font-size: 2rem;
+  }
+}
+
+.title {
+  color: var(--Color-black);
+  font-size: 1em;
+  font-weight: 300;
+  strong {
+    font-weight: 600;
+  }
+}
