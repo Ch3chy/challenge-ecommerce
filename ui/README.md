@@ -81,9 +81,9 @@ Cada componente está documentado en Storybook con ejemplos prácticos y configu
 
 ### 🌐 Storybook Desplegado
 
-Puedes acceder al Storybook desplegado en el siguiente enlace:
+Puedes acceder al Storybook desplegado en el siguiente enlace: [Storybook - Checho Challenge UI](https://67f0e6620850b0c0086cf36f-ftkqokulbi.chromatic.com/)
 
-[Storybook - Checho Challenge UI](https://67f0e6620850b0c0086cf36f-ftkqokulbi.chromatic.com/)
+Y al Chronomatic en el siguiente link: [Chronomatic](https://www.chromatic.com/library?appId=67f0e6620850b0c0086cf36f&branch=main)
 
 ## 🚀 Publicación en npm
 
