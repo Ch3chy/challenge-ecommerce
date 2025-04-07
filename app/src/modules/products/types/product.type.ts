@@ -5,4 +5,5 @@ export type Product = {
   stock: number;
   price: number;
   tax: number;
+  image: string;
 };

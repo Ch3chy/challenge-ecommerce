@@ -11,6 +11,9 @@ export const useProductsStore = create<ProductsStore>()(
         return products.find((product) => product.id === id);
       },
       setProducts: (products) => set({ products }),
+
+      categories: [],
+      setCategories: (categories) => set({ categories }),
     }),
     {
       name: "products-storage",

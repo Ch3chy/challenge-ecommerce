@@ -4,4 +4,7 @@ export type ProductsStore = {
   products: Product[];
   getProuct: (id: number) => Product | undefined;
   setProducts: (products: Product[]) => void;
+
+  categories: string[];
+  setCategories: (categories: string[]) => void;
 };

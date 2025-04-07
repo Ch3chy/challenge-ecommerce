@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Manzana Roja",
+    "category": "Frutas Frescas",
+    "stock": 50,
+    "price": 2000,
+    "tax": 0.19,
+    "image": "https://elegifruta.com.ar/wp-content/uploads/2017/07/manzana_roja.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Manzana Verde",
+    "category": "Frutas Frescas",
+    "stock": 30,
+    "price": 3000,
+    "tax": 0,
+    "image": "https://provisiondelcampo.com/wp-content/uploads/2024/03/manzana-verde.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Banano",
+    "category": "Frutas Frescas",
+    "stock": 100,
+    "price": 1000,
+    "tax": 0,
+    "image": "https://mercasur.com.co/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NTQ1MjIyLCJwdXIiOiJibG9iX2lkIn19--d645611c0d265ef26f496e3d526e5e0e8beb7169/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemVfdG9fZml0IjpbNjAwLDYwMF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--121ebfcd4293f99df590ac1a60ec2d53d6f75b42/banano-criollo.jpg?locale=es"
+  },
+  {
+    "id": 4,
+    "name": "Pera",
+    "category": "Frutas Frescas",
+    "stock": 25,
+    "price": 3000,
+    "tax": 0.19,
+    "image": "https://ecommerce.surtifamiliar.com/backend/admin/backend/web/archivosDelCliente/items/images/Frutas-Frutas-a-Granel-PERA-VERDE-A-GRANEL-324320201112183509.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Fresa",
+    "category": "Frutas Frescas",
+    "stock": 40,
+    "price": 4000,
+    "tax": 0.19,
+    "image": "https://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Uva Morada",
+    "category": "Frutas Frescas",
+    "stock": 6000,
+    "price": 5.0,
+    "tax": 0,
+    "image": "https://frutasyverdurasdehoy.cl/wp-content/uploads/2021/03/uva_morada_sinpepa.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Uva Verde",
+    "category": "Frutas Frescas",
+    "stock": 55,
+    "price": 5000,
+    "tax": 0.19,
+    "image": "https://nativoalimentos.co/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTQ4NDYwOSwicHVyIjoiYmxvYl9pZCJ9fQ==--baf5715e65ad6174176c93afb59b24aa4fcd415c/uva-verde-sin-semilla-medellin-laureles-envigado-poblado.png?locale=es"
+  },
+  {
+    "id": 8,
+    "name": "Naranja",
+    "category": "Cítricos",
+    "stock": 70,
+    "price": 2000,
+    "tax": 0,
+    "image": "https://www.ammarket.com/wp-content/uploads/2021/12/NARANJA_MESA_AMMARKET.COM_5.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Limón",
+    "category": "Cítricos",
+    "stock": 90,
+    "price": 1000,
+    "tax": 0.19,
+    "image": "https://vaquitaexpress.com.co/media/catalog/product/cache/e89ece728e3939ca368b457071d3c0be/1/9/190_32.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Mandarina",
+    "category": "Cítricos",
+    "stock": 45,
+    "price": 3000,
+    "tax": 0,
+    "image": "https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2018%2F10%2F04173718%2Fmandarina-02.jpg?auth=d213c2bef89d4daa2dcca3dba990f9eb47d52bfb80d6d266164ce79e3d12b1c8&smart=true&width=1200&height=675&quality=85"
+  },
+  {
+    "id": 11,
+    "name": "Piña",
+    "category": "Tropicales",
+    "stock": 20,
+    "price": 7000,
+    "tax": 0.19,
+    "image": "https://www.gob.mx/cms/uploads/image/file/415269/pi_a_1.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Mango",
+    "category": "Tropicales",
+    "stock": 35,
+    "price": 3000,
+    "tax": 0,
+    "image": "https://solofruver.com/wp-content/uploads/2020/06/mango.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Papaya",
+    "category": "Tropicales",
+    "stock": 30,
+    "price": 5000,
+    "tax": 0.19,
+    "image": "https://mercasur.com.co/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NTQ1MzIwLCJwdXIiOiJibG9iX2lkIn19--24cbbc39210fb0729b13b729c9a3035782c50b66/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemVfdG9fZml0IjpbNjAwLDYwMF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--121ebfcd4293f99df590ac1a60ec2d53d6f75b42/papaua.jpg?locale=es"
+  },
+  {
+    "id": 14,
+    "name": "Coco",
+    "category": "Tropicales",
+    "stock": 15,
+    "price": 8000,
+    "tax": 0,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQju63CeIPz4uWMp7p02htw6OvhF-ysYLp_KA&s"
+  },
+  {
+    "id": 15,
+    "name": "Sandía",
+    "category": "Tropicales",
+    "stock": 10,
+    "price": 9000,
+    "tax": 0.19,
+    "iamge": "https://fruiver.com/wp-content/uploads/2021/07/Sandia-rayada-3.jpg"
+  }
+]
