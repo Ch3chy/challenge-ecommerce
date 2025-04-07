@@ -7,7 +7,7 @@ const Products: FC = () => {
 
   return (
     <div>
-      <h1>Modulo Productos: {products.length}</h1>
+      <h1>Productos ({products.length})</h1>
       <Button> TEST </Button>
     </div>
   );

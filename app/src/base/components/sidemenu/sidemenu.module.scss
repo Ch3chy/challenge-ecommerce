@@ -1,0 +1,37 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.sidemenu {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0.75rem;
+  width: 100%;
+
+  .item {
+    display: block;
+  }
+
+  @include mixins.responsive(md) {
+    padding: 4rem 1rem;
+  }
+}
+
+.header {
+  width: 100%;
+  .logo {
+    height: 50px;
+    width: 100px;
+  }
+}
+
+.menu,
+.menuFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu {
+  flex: 1;
+}

@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "checho-challenge-ui": "^0.0.4",
+    "checho-challenge-ui": "^0.1.0",
     "react-router-dom": "^6.28.2",
     "zustand": "^5.0.3"
   },
