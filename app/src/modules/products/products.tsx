@@ -3,9 +3,10 @@ import { FC } from "react";
 import { Categories } from "./components/categories";
 import styles from "./products.module.scss";
 import Title from "@/base/components/title";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 const Products: FC = () => {
+  const { category } = useParams();
   const categories = useProductsStore((state) => state.categories);
 
   return (
@@ -14,7 +15,7 @@ const Products: FC = () => {
         <Title>
           <strong>Lista</strong> Categorias
         </Title>
-        <Categories categories={categories} />
+        <Categories categories={categories} category={category} />
       </section>
       <section className={styles.section}>
         <Title>

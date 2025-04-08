@@ -2,9 +2,13 @@ import { FC } from "react";
 import { CategoryProps } from "./category.type";
 import styles from "./category.module.scss";
 
-const Category: FC<CategoryProps> = ({ category, className }) => {
+const Category: FC<CategoryProps> = ({ category, active, className }) => {
   return (
-    <div className={`${styles.category} ${className || ""}`}>
+    <div
+      className={`${styles.category} ${active ? styles.categoryActive : ""} ${
+        className || ""
+      }`}
+    >
       <div className={styles.imageContainer}>
         <img
           className={styles.image}

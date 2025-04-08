@@ -4,6 +4,7 @@
   align-items: stretch;
   display: flex;
   gap: 0.75rem;
+  overflow: auto;
 
   @include mixins.responsive(md) {
     gap: 1rem;
