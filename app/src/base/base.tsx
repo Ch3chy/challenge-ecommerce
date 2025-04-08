@@ -1,17 +1,26 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useMemo } from "react";
 import styles from "./base.module.scss";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { SideMenu } from "./components/sidemenu";
 import { MenuItemProps } from "./components/sidemenu/sidemenu.types";
 import { useProductsLoader } from "@/modules/products/hooks/loader.hook";
 
 const Base: FC = () => {
+  const { pathname } = useLocation();
   const { products, loadProducts } = useProductsLoader();
 
-  const menu: MenuItemProps[] = [
-    { icon: "QrCode", path: "/", label: "Productos", active: true },
-    { icon: "Note", path: "/", label: "Pedidos" },
-  ];
+  const menu = useMemo(() => {
+    const items: MenuItemProps[] = [
+      { icon: "QrCode", path: "/products", label: "Productos" },
+      { icon: "ShoppingCart", path: "/shopping-cart", label: "Carrito" },
+      { icon: "Note", path: "/pedidos", label: "Pedidos" },
+    ];
+
+    return items.map((item) => ({
+      ...item,
+      active: pathname.indexOf(item.path) >= 0,
+    }));
+  }, [pathname]);
 
   const footerMenu: MenuItemProps[] = [
     { icon: "SignIn", path: "/", label: "Ingresar" },

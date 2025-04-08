@@ -15,8 +15,8 @@ const Categories: FC<CategoriesProps> = ({
         <Link
           to={
             currentCategory === category.name
-              ? "/"
-              : `/categorias/${category.name}`
+              ? "/products"
+              : `/products/categories/${category.name}`
           }
           className={styles.item}
           key={`${category.name}`}

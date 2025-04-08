@@ -20,7 +20,7 @@ const ProductsRoutes: FC = () => {
           }
         />
         <Route
-          path="/categorias/:category"
+          path="/categories/:category"
           element={
             <Suspense>
               <ProductsList />
