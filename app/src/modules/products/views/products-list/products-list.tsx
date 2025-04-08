@@ -6,9 +6,11 @@ import { useParams } from "react-router-dom";
 import { useProductsStore } from "../../stores/useProductsStore";
 import { useShoppingCartStore } from "@/modules/shopping-cart/stores/useShoppingCartStore";
 import { Product } from "../../types/product.type";
+import { useUsersStore } from "@/modules/users/stores/useUsersStore";
 
 const ProductsList: FC<ProductsListProps> = ({ className }) => {
   const { category } = useParams();
+  const isLogged = useUsersStore((store) => store.logged);
   const products = useProductsStore((state) => state.products);
   const productInCart = useShoppingCartStore((store) => store.products);
   const getProductFromCart = useShoppingCartStore((store) => store.getProduct);
@@ -53,6 +55,7 @@ const ProductsList: FC<ProductsListProps> = ({ className }) => {
         <div key={product.id} className={styles.item}>
           <ProductCard
             product={product}
+            desactiveShoppingCart={isLogged}
             onAddClick={() => handleAddProduct(product)}
           />
         </div>

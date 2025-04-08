@@ -7,6 +7,7 @@ import { currencyFormat } from "@/utils/currency.utils";
 const ProductCard: FC<ProductCardProps> = ({
   product,
   className,
+  desactiveShoppingCart,
   onAddClick,
 }) => {
   const handleAddClick = () => {
@@ -24,14 +25,22 @@ const ProductCard: FC<ProductCardProps> = ({
       </figure>
       <h3 className={styles.name}>{product.name}</h3>
       <span className={styles.price}>{currencyFormat(product.price)}</span>
-      <Button
-        onClick={handleAddClick}
-        fullWidth
-        variant="primary"
-        disabled={product.inactive}
-      >
-        <Icon icon="ShoppingCart" /> Agregar
-      </Button>
+      {desactiveShoppingCart && (
+        <p>
+          <strong>Cantidad: </strong>
+          {product.stock}
+        </p>
+      )}
+      {!desactiveShoppingCart && (
+        <Button
+          onClick={handleAddClick}
+          fullWidth
+          variant="primary"
+          disabled={product.inactive}
+        >
+          <Icon icon="ShoppingCart" /> Agregar
+        </Button>
+      )}
     </article>
   );
 };
