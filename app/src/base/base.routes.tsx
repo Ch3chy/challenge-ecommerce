@@ -10,6 +10,9 @@ const BaseRoutes: FC = () => {
   const ShoppingCartRoutes = useLazyImport(
     () => import("@/modules/shopping-cart/shopping-cart.routes")
   );
+  const UsersRoutes = useLazyImport(
+    () => import("@/modules/users/users.routes")
+  );
 
   return (
     <Routes>
@@ -27,6 +30,14 @@ const BaseRoutes: FC = () => {
           element={
             <Suspense>
               <ShoppingCartRoutes />
+            </Suspense>
+          }
+        />
+        <Route
+          path="users/*"
+          element={
+            <Suspense>
+              <UsersRoutes />
             </Suspense>
           }
         />
