@@ -41,6 +41,15 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  gap: 1rem;
+  .back {
+    height: 2.25rem;
+  }
+  .customer {
+    background-color: var(--Color-white);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+  }
 }
 
 .summary {

@@ -1,16 +1,21 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Title from "@/base/components/title";
 import styles from "./checkout.module.scss";
 import { useShoppingCartStore } from "../../stores/useShoppingCartStore";
 import { CartProduct } from "../../components/cart-product";
 import { Button, Icon } from "checho-challenge-ui";
 import { useNavigate } from "react-router-dom";
+import { CustomerForm } from "../../components/customer-form";
+import { useFacadeCoreStore } from "@/base/hooks/facade-core-store.hook";
 
 const Checkout: FC = () => {
   const navigate = useNavigate();
 
   const products = useShoppingCartStore((store) => store.products);
   const getProduct = useShoppingCartStore((store) => store.getProduct);
+  const { countries } = useFacadeCoreStore();
+
+  const [formIsValid, setFormIsValid] = useState(false);
 
   const handleBack = () => {
     navigate("/shopping-cart/cart", { replace: true });
@@ -26,6 +31,12 @@ const Checkout: FC = () => {
           <button className={styles.back} onClick={handleBack}>
             <Icon icon="ArrowLeft" /> Atras
           </button>
+          <div className={styles.customer}>
+            <CustomerForm
+              countries={countries}
+              onChangeIsValid={(isValid) => setFormIsValid(isValid)}
+            />
+          </div>
         </div>
         <div className={styles.summary}>
           <h3 className={styles.title}>Resumen</h3>
@@ -42,7 +53,7 @@ const Checkout: FC = () => {
               ) : null;
             })}
           </div>
-          <Button variant="primary" fullWidth>
+          <Button variant="primary" fullWidth disabled={!formIsValid}>
             Pagar
           </Button>
         </div>
