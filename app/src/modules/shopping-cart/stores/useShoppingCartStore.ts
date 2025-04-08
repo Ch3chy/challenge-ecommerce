@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { ShoppingCartStore } from "../types/store.type";
 import { calculeAddProduct } from "../utils/shopping-cart.utils";
+import { Customer } from "../types/customer.type";
 
 export const useShoppingCartStore = create<ShoppingCartStore>()(
   persist(
@@ -28,6 +29,13 @@ export const useShoppingCartStore = create<ShoppingCartStore>()(
           productsDetail,
         });
       },
+      getProducts: () => {
+        const { products, productsDetail } = get();
+        return products.map((id) => productsDetail[`product-${id}`]);
+      },
+
+      setCustomer: (customer: Customer) => set({ customer }),
+
       getTotals: () => {
         const products = get().productsDetail;
         return Object.values(products).reduce(
@@ -38,6 +46,10 @@ export const useShoppingCartStore = create<ShoppingCartStore>()(
           }),
           { totalNeto: 0, totalTax: 0, totalPrice: 0 }
         );
+      },
+
+      clearShoppingCart: () => {
+        set({ products: [], productsDetail: {}, customer: undefined });
       },
     }),
     {

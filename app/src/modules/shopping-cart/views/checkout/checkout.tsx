@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import Title from "@/base/components/title";
 import styles from "./checkout.module.scss";
 import { useShoppingCartStore } from "../../stores/useShoppingCartStore";
@@ -7,18 +7,42 @@ import { Button, Icon } from "checho-challenge-ui";
 import { useNavigate } from "react-router-dom";
 import { CustomerForm } from "../../components/customer-form";
 import { useFacadeCoreStore } from "@/base/hooks/facade-core-store.hook";
+import { useOrdersStore } from "@/modules/orders/stores/useOrdersStore";
 
 const Checkout: FC = () => {
   const navigate = useNavigate();
 
   const products = useShoppingCartStore((store) => store.products);
+  const customer = useShoppingCartStore((store) => store.customer);
+  const getTotals = useShoppingCartStore((store) => store.getTotals);
   const getProduct = useShoppingCartStore((store) => store.getProduct);
+  const getProducts = useShoppingCartStore((store) => store.getProducts);
+  const setCustomer = useShoppingCartStore((store) => store.setCustomer);
+  const clearShoppingCart = useShoppingCartStore(
+    (store) => store.clearShoppingCart
+  );
+  const addOrder = useOrdersStore((store) => store.addOrder);
   const { countries } = useFacadeCoreStore();
 
   const [formIsValid, setFormIsValid] = useState(false);
 
+  const totals = useMemo(() => getTotals(), []);
+
   const handleBack = () => {
     navigate("/shopping-cart/cart", { replace: true });
+  };
+
+  const handleCreateOrder = () => {
+    if (products.length > 0 && customer) {
+      addOrder({
+        date: new Date(),
+        customer,
+        products: getProducts(),
+        ...totals,
+      });
+
+      clearShoppingCart();
+    }
   };
 
   return (
@@ -33,7 +57,9 @@ const Checkout: FC = () => {
           </button>
           <div className={styles.customer}>
             <CustomerForm
+              data={customer}
               countries={countries}
+              onChangeData={(data) => setCustomer(data)}
               onChangeIsValid={(isValid) => setFormIsValid(isValid)}
             />
           </div>
@@ -53,8 +79,13 @@ const Checkout: FC = () => {
               ) : null;
             })}
           </div>
-          <Button variant="primary" fullWidth disabled={!formIsValid}>
-            Pagar
+          <Button
+            variant="primary"
+            fullWidth
+            disabled={!formIsValid}
+            onClick={handleCreateOrder}
+          >
+            Crear orden
           </Button>
         </div>
       </div>
