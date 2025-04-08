@@ -1,6 +1,6 @@
-import { ProductsStore } from "@/modules/products/types/store.type";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { ProductsStore } from "../types/store.type";
 
 export const useProductsStore = create<ProductsStore>()(
   persist(

@@ -6,7 +6,7 @@ import { MenuItemProps } from "./components/sidemenu/sidemenu.types";
 import { useProductsLoader } from "@/modules/products/hooks/loader.hook";
 
 const Base: FC = () => {
-  const { loadProducts } = useProductsLoader();
+  const { products, loadProducts } = useProductsLoader();
 
   const menu: MenuItemProps[] = [
     { icon: "QrCode", path: "/", label: "Productos", active: true },
@@ -18,8 +18,10 @@ const Base: FC = () => {
   ];
 
   useEffect(() => {
-    loadProducts();
-  }, []);
+    if (products.length === 0) {
+      loadProducts();
+    }
+  }, [products, loadProducts]);
 
   return (
     <div className={styles.principalMain}>

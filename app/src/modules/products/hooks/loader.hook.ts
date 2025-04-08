@@ -1,8 +1,9 @@
-import { useProductsStore } from "@/base/stores/useProductsStore";
 import { fetchProducts } from "../fetchs/products.fetchs";
+import { useProductsStore } from "../stores/useProductsStore";
 import { Product } from "../types/product.type";
 
 export const useProductsLoader = () => {
+  const products = useProductsStore((state) => state.products);
   const setProducts = useProductsStore((state) => state.setProducts);
   const setCategories = useProductsStore((state) => state.setCategories);
 
@@ -31,5 +32,5 @@ export const useProductsLoader = () => {
     );
   };
 
-  return { loadProducts };
+  return { products, loadProducts };
 };

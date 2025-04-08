@@ -1,9 +1,9 @@
-import { useProductsStore } from "@/base/stores/useProductsStore";
 import { FC } from "react";
 import { Categories } from "./components/categories";
 import styles from "./products.module.scss";
 import Title from "@/base/components/title";
 import { Outlet, useParams } from "react-router-dom";
+import { useProductsStore } from "./stores/useProductsStore";
 
 const Products: FC = () => {
   const { category } = useParams();

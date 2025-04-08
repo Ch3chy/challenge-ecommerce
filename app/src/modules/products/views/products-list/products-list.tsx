@@ -1,9 +1,9 @@
 import { FC, useMemo } from "react";
 import { ProductsListProps } from "./products-list.types";
-import { useProductsStore } from "@/base/stores/useProductsStore";
 import { ProductCard } from "../../components/product-card";
 import styles from "./products-list.module.scss";
 import { useParams } from "react-router-dom";
+import { useProductsStore } from "../../stores/useProductsStore";
 
 const ProductsList: FC<ProductsListProps> = ({ className }) => {
   const { category } = useParams();
