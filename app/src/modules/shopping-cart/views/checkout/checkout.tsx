@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { CustomerForm } from "../../components/customer-form";
 import { useFacadeCoreStore } from "@/base/hooks/facade-core-store.hook";
 import { useOrdersStore } from "@/modules/orders/stores/useOrdersStore";
+import { useProductsStore } from "@/modules/products/stores/useProductsStore";
 
 const Checkout: FC = () => {
   const navigate = useNavigate();
@@ -22,6 +23,8 @@ const Checkout: FC = () => {
     (store) => store.clearShoppingCart
   );
   const addOrder = useOrdersStore((store) => store.addOrder);
+  const updateStock = useProductsStore((store) => store.updateStock);
+  const getProductInventory = useProductsStore((store) => store.getProduct);
   const { countries } = useFacadeCoreStore();
 
   const [formIsValid, setFormIsValid] = useState(false);
@@ -40,6 +43,17 @@ const Checkout: FC = () => {
         products: getProducts(),
         ...totals,
       });
+
+      updateStock(
+        products.map((product) => {
+          const detail = getProduct(product);
+          const inventory = getProductInventory(product);
+          if (detail && inventory) {
+            return { id: product, stock: inventory.stock - detail.quantity };
+          }
+          return { id: product, stock: 0 };
+        })
+      );
 
       clearShoppingCart();
     }

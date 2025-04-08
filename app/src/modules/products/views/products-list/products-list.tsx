@@ -10,14 +10,27 @@ import { Product } from "../../types/product.type";
 const ProductsList: FC<ProductsListProps> = ({ className }) => {
   const { category } = useParams();
   const products = useProductsStore((state) => state.products);
+  const productInCart = useShoppingCartStore((store) => store.products);
   const getProductFromCart = useShoppingCartStore((store) => store.getProduct);
   const addToCart = useShoppingCartStore((store) => store.addProduct);
 
+  const productsStocks = useMemo(() => {
+    return products.map((product) => {
+      const productFromCart = getProductFromCart(product.id);
+      return {
+        ...product,
+        inactive: productFromCart
+          ? product.stock - productFromCart.quantity <= 0
+          : false,
+      };
+    });
+  }, [products, productInCart]);
+
   const productsFilters = useMemo(() => {
     return category
-      ? products.filter((product) => product.category === category)
-      : products;
-  }, [category, products]);
+      ? productsStocks.filter((product) => product.category === category)
+      : productsStocks;
+  }, [category, productsStocks]);
 
   const handleAddProduct = (product: Product) => {
     let productFromCart = getProductFromCart(product.id);
