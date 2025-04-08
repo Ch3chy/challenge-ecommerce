@@ -1,7 +1,7 @@
 {
   "name": "checho-challenge-ui",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "./dist/checho-challenge-ui.umd.js",
   "module": "./dist/checho-challenge-ui.es.js",
   "types": "./dist/index.d.ts",
@@ -34,6 +34,7 @@
     "globals": "^15.15.0",
     "storybook": "^8.6.12",
     "vite": "^6.2.0",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.3"
   },
   "peerDependencies": {

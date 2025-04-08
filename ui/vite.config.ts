@@ -1,13 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
-  plugins: [react(), dts({ insertTypesEntry: true })],
+  plugins: [react(), dts({ insertTypesEntry: true }), cssInjectedByJsPlugin()],
   css: {
     modules: {
-      localsConvention: 'camelCaseOnly',
-    }
+      localsConvention: "camelCaseOnly",
+    },
   },
   build: {
     lib: {
