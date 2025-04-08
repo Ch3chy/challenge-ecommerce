@@ -4,6 +4,11 @@ import dts from "vite-plugin-dts";
 
 export default defineConfig({
   plugins: [react(), dts({ insertTypesEntry: true })],
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    }
+  },
   build: {
     lib: {
       entry: "src/index.ts",

@@ -1,7 +1,7 @@
 {
   "name": "checho-challenge-ui",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./dist/checho-challenge-ui.umd.js",
   "module": "./dist/checho-challenge-ui.es.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,11 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.7"
+  },
   "devDependencies": {
+    "@storybook/addon-docs": "^8.6.12",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
@@ -48,8 +52,5 @@
     "./styles/mixins": {
       "default": "./src/styles/_mixins.scss"
     }
-  },
-  "dependencies": {
-    "@phosphor-icons/react": "^2.1.7"
   }
 }
