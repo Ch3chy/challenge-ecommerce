@@ -6,4 +6,6 @@ export type Product = {
   price: number;
   tax: number;
   image: string;
+
+  inactive?: boolean;
 };

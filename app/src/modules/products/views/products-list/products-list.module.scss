@@ -1,0 +1,32 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 0.75rem;
+
+  @include mixins.responsive(280px, min, container) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mixins.responsive(sm, min, container) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mixins.responsive(md, min, container) {
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include mixins.responsive(lg, min, container) {
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}

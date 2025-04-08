@@ -1,0 +1,46 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.productCard {
+  align-items: center;
+  background-color: var(--Color-white);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+
+  &.productCardInactive {
+    filter: grayscale(100%);
+  }
+
+  @include mixins.responsive(md) {
+    border-radius: 1rem;
+  }
+}
+
+.imageContainer {
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 0.5rem var(--Color-yellow-500);
+  border-radius: 50%;
+  max-width: 90px;
+  overflow: hidden;
+  width: 100%;
+  .image {
+    height: 100%;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.name {
+  color: var(--Color-black);
+  font-size: 0.875rem;
+  line-height: 1.25em;
+  text-align: center;
+
+  @include mixins.responsive(md) {
+    font-size: 1rem;
+  }
+}

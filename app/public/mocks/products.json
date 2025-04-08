@@ -15,7 +15,8 @@
     "stock": 30,
     "price": 3000,
     "tax": 0,
-    "image": "https://provisiondelcampo.com/wp-content/uploads/2024/03/manzana-verde.jpg"
+    "image": "https://provisiondelcampo.com/wp-content/uploads/2024/03/manzana-verde.jpg",
+    "inactive": true
   },
   {
     "id": 3,
@@ -132,6 +133,6 @@
     "stock": 10,
     "price": 9000,
     "tax": 0.19,
-    "iamge": "https://fruiver.com/wp-content/uploads/2021/07/Sandia-rayada-3.jpg"
+    "image": "https://fruiver.com/wp-content/uploads/2021/07/Sandia-rayada-3.jpg"
   }
 ]
