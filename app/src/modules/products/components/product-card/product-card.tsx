@@ -2,6 +2,7 @@ import { FC } from "react";
 import { ProductCardProps } from "./product-card.type";
 import styles from "./product-card.module.scss";
 import { Button, Icon } from "checho-challenge-ui";
+import { currencyFormat } from "@/utils/currency.utils";
 
 const ProductCard: FC<ProductCardProps> = ({
   product,
@@ -22,7 +23,7 @@ const ProductCard: FC<ProductCardProps> = ({
         <img src={product.image} alt={product.name} className={styles.image} />
       </figure>
       <h3 className={styles.name}>{product.name}</h3>
-      <span className={styles.price}>${product.price}</span>
+      <span className={styles.price}>{currencyFormat(product.price)}</span>
       <Button
         onClick={handleAddClick}
         fullWidth
