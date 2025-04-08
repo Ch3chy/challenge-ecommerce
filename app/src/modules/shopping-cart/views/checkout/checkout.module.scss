@@ -1,0 +1,65 @@
+@use "checho-challenge-ui/styles/mixins";
+
+.checkout {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.back {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--Color-black);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @include mixins.responsive(630px, min, container) {
+    flex-direction: row;
+    gap: 1.5rem;
+    .summary {
+      flex: 1;
+      max-width: 380px;
+      width: 60%;
+      .title,
+      .list {
+        display: block;
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .title {
+    color: var(--Color-black);
+    display: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .list {
+    border-radius: 0.75rem;
+    display: none;
+    overflow: hidden;
+  }
+  .product {
+    border-radius: 0;
+  }
+}

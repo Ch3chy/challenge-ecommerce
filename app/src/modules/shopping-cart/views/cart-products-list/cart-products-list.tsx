@@ -5,8 +5,11 @@ import { CartProduct } from "../../components/cart-product";
 import Title from "@/base/components/title";
 import { currencyFormat } from "@/utils/currency.utils";
 import { Button, Icon } from "checho-challenge-ui";
+import { useNavigate } from "react-router-dom";
 
 const CartProductsList: FC = () => {
+  const navigate = useNavigate();
+
   const products = useShoppingCartStore((store) => store.products);
   const getProduct = useShoppingCartStore((store) => store.getProduct);
   const getTotals = useShoppingCartStore((store) => store.getTotals);
@@ -16,6 +19,10 @@ const CartProductsList: FC = () => {
 
   const handleDeleteProduct = (id: number) => {
     removeProduct(id);
+  };
+
+  const handleContinue = () => {
+    navigate("/shopping-cart/checkout");
   };
 
   return (
@@ -48,7 +55,7 @@ const CartProductsList: FC = () => {
             Total<strong>{currencyFormat(totals.totalPrice)}</strong>
           </p>
         </div>
-        <Button variant="primary">
+        <Button variant="primary" onClick={handleContinue}>
           Continuar <Icon icon="ArrowRight" />
         </Button>
       </div>

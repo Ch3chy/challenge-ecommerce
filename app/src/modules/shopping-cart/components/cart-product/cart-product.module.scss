@@ -32,9 +32,6 @@
     object-fit: cover;
     width: 100%;
   }
-  @include mixins.responsive(xs, min, container) {
-    // width: 80px;
-  }
 }
 
 .data {

@@ -8,6 +8,8 @@ const ShoppingCartRoutes: FC = () => {
     () => import("./views/cart-products-list/cart-products-list")
   );
 
+  const Checkout = useLazyImport(() => import("./views/checkout/checkout"));
+
   return (
     <Routes>
       <Route path="/" element={<ShoppingCart />}>
@@ -16,6 +18,14 @@ const ShoppingCartRoutes: FC = () => {
           element={
             <Suspense>
               <CartProductsList />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <Suspense>
+              <Checkout />
             </Suspense>
           }
         />
