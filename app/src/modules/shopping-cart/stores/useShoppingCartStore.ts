@@ -34,6 +34,7 @@ export const useShoppingCartStore = create<ShoppingCartStore>()(
         return products.map((id) => productsDetail[`product-${id}`]);
       },
 
+      customer: undefined,
       setCustomer: (customer: Customer) => set({ customer }),
 
       getTotals: () => {

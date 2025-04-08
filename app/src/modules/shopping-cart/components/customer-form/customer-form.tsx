@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { CustomerFormProps } from "./customer-form.types";
 import {
   initialValues,
@@ -14,7 +14,11 @@ const CustomerForm: FC<CustomerFormProps> = ({
   onChangeData,
   onChangeIsValid,
 }) => {
-  const customer = data || initialValues;
+  const [customer, setCustomer] = useState(data || initialValues);
+
+  useEffect(() => {
+    setCustomer(data || initialValues);
+  }, [data]);
 
   return (
     <Formik

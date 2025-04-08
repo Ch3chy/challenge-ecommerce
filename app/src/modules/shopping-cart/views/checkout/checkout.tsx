@@ -9,6 +9,7 @@ import { CustomerForm } from "../../components/customer-form";
 import { useFacadeCoreStore } from "@/base/hooks/facade-core-store.hook";
 import { useOrdersStore } from "@/modules/orders/stores/useOrdersStore";
 import { useProductsStore } from "@/modules/products/stores/useProductsStore";
+import { Customer } from "../../types/customer.type";
 
 const Checkout: FC = () => {
   const navigate = useNavigate();
@@ -34,6 +35,12 @@ const Checkout: FC = () => {
   const handleBack = () => {
     navigate("/shopping-cart/cart", { replace: true });
   };
+
+  const handleChangeCustomerData = (data: Customer) => {
+    if (products.length > 0) {
+      setCustomer(data)
+    }
+  }
 
   const handleCreateOrder = () => {
     if (products.length > 0 && customer) {
@@ -73,7 +80,7 @@ const Checkout: FC = () => {
             <CustomerForm
               data={customer}
               countries={countries}
-              onChangeData={(data) => setCustomer(data)}
+              onChangeData={handleChangeCustomerData}
               onChangeIsValid={(isValid) => setFormIsValid(isValid)}
             />
           </div>
