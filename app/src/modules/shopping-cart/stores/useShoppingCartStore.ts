@@ -20,6 +20,17 @@ export const useShoppingCartStore = create<ShoppingCartStore>()(
           productsDetail,
         });
       },
+      getTotals: () => {
+        const products = get().productsDetail;
+        return Object.values(products).reduce(
+          (totals, product) => ({
+            totalNeto: totals.totalNeto + (product.totalNeto || 0),
+            totalTax: totals.totalTax + (product.totalTax || 0),
+            totalPrice: totals.totalPrice + (product.totalPrice || 0),
+          }),
+          { totalNeto: 0, totalTax: 0, totalPrice: 0 }
+        );
+      },
     }),
     {
       name: "shopping-cart-storage",

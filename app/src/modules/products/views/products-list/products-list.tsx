@@ -25,6 +25,7 @@ const ProductsList: FC<ProductsListProps> = ({ className }) => {
       productFromCart = {
         id: product.id,
         name: product.name,
+        image: product.image,
         quantity: 0,
         price: product.price,
         tax: product.tax,
