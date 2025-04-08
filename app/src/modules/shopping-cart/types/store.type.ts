@@ -5,5 +5,6 @@ export type ShoppingCartStore = {
   productsDetail: { [key: string]: ShoppingCartProduct };
   getProduct: (id: number) => ShoppingCartProduct | undefined;
   addProduct: (product: ShoppingCartProduct) => void;
+  removeProduct: (id: number) => void;
   getTotals: () => ShoppingCartTotals;
 };

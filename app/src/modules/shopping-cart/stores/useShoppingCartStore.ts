@@ -20,6 +20,14 @@ export const useShoppingCartStore = create<ShoppingCartStore>()(
           productsDetail,
         });
       },
+      removeProduct: (id) => {
+        const { products, productsDetail } = get();
+        delete productsDetail[`product-${id}`];
+        set({
+          products: products.filter((item) => item !== id),
+          productsDetail,
+        });
+      },
       getTotals: () => {
         const products = get().productsDetail;
         return Object.values(products).reduce(

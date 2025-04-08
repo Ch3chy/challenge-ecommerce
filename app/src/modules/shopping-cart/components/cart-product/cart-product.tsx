@@ -2,8 +2,13 @@ import { FC } from "react";
 import { CartProductProps } from "./cart-product.types";
 import { currencyFormat } from "@/utils/currency.utils";
 import styles from "./cart-product.module.scss";
+import { Button, Icon } from "checho-challenge-ui";
 
-const CartProduct: FC<CartProductProps> = ({ product, className }) => {
+const CartProduct: FC<CartProductProps> = ({
+  product,
+  className,
+  onDeleteClick,
+}) => {
   return (
     <article className={`${styles.cartProduct} ${className || ""}`}>
       <figure className={styles.imageContainer}>
@@ -17,6 +22,13 @@ const CartProduct: FC<CartProductProps> = ({ product, className }) => {
         <p>Cantidad: {product.quantity}</p>
         <p className={styles.price}>{currencyFormat(product.totalNeto || 0)}</p>
       </div>
+      <Button
+        variant="secondary"
+        className={styles.trash}
+        onClick={onDeleteClick}
+      >
+        <Icon icon="Trash" />
+      </Button>
     </article>
   );
 };

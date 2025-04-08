@@ -10,8 +10,13 @@ const CartProductsList: FC = () => {
   const products = useShoppingCartStore((store) => store.products);
   const getProduct = useShoppingCartStore((store) => store.getProduct);
   const getTotals = useShoppingCartStore((store) => store.getTotals);
+  const removeProduct = useShoppingCartStore((store) => store.removeProduct);
 
   const totals = useMemo(() => getTotals(), []);
+
+  const handleDeleteProduct = (id: number) => {
+    removeProduct(id);
+  };
 
   return (
     <section className={styles.cartProductsList}>
@@ -26,6 +31,7 @@ const CartProductsList: FC = () => {
               key={`cart-product-${productId}`}
               product={product}
               className={styles.product}
+              onDeleteClick={() => handleDeleteProduct(productId)}
             />
           ) : null;
         })}
