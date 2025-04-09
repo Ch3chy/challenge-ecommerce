@@ -14,5 +14,5 @@ export type ProductOrder = {
   id: number;
   name: string;
   quantity: number;
-  total?: number;
+  totalPrice?: number;
 };
