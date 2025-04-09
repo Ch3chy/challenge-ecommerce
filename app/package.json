@@ -13,6 +13,7 @@
     "checho-challenge-ui": "^0.3.0",
     "formik": "^2.4.6",
     "react-router-dom": "^6.28.2",
+    "sonner": "^2.0.3",
     "yup": "^1.6.1",
     "zustand": "^5.0.3"
   },

@@ -5,6 +5,7 @@ import { SideMenu } from "./components/sidemenu";
 import { MenuItemProps } from "./components/sidemenu/sidemenu.types";
 import { useProductsLoader } from "@/modules/products/hooks/loader.hook";
 import { useUsersStore } from "@/modules/users/stores/useUsersStore";
+import { Toaster } from "sonner";
 
 const Base: FC = () => {
   const { pathname } = useLocation();
@@ -76,6 +77,7 @@ const Base: FC = () => {
         <section className={styles.appMain}>
           <Outlet />
         </section>
+        <Toaster />
       </main>
     </div>
   );

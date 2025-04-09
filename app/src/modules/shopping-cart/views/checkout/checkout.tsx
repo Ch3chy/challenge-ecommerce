@@ -10,6 +10,7 @@ import { useFacadeCoreStore } from "@/base/hooks/facade-core-store.hook";
 import { useOrdersStore } from "@/modules/orders/stores/useOrdersStore";
 import { useProductsStore } from "@/modules/products/stores/useProductsStore";
 import { Customer } from "../../types/customer.type";
+import { toast } from "sonner";
 
 const Checkout: FC = () => {
   const navigate = useNavigate();
@@ -63,6 +64,8 @@ const Checkout: FC = () => {
       );
 
       clearShoppingCart();
+
+      toast.success(`Orden creada correctamente`);
     }
   };
 

@@ -7,6 +7,7 @@ import { useProductsStore } from "../../stores/useProductsStore";
 import { useShoppingCartStore } from "@/modules/shopping-cart/stores/useShoppingCartStore";
 import { Product } from "../../types/product.type";
 import { useUsersStore } from "@/modules/users/stores/useUsersStore";
+import { toast } from "sonner";
 
 const ProductsList: FC<ProductsListProps> = ({ className }) => {
   const { category } = useParams();
@@ -47,6 +48,7 @@ const ProductsList: FC<ProductsListProps> = ({ className }) => {
       };
     }
     addToCart(productFromCart);
+    toast.success(`${product.name} agregado al carrito`);
   };
 
   return (
