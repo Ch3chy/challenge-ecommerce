@@ -4,3 +4,34 @@
   gap: 1rem;
   width: 100%;
 }
+
+.detail {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  .overlayer {
+    background-color: var(--Color-black);
+    height: 100%;
+    position: absolute;
+    opacity: 0.2;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .detailContainer {
+    background-color: var(--Color-white);
+    box-shadow: 0px 0px 0.5rem var(--Color-gray-500);
+    height: 100%;
+    max-width: 350px;
+    padding: 0.75rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 85px);
+    z-index: 2;
+  }
+}

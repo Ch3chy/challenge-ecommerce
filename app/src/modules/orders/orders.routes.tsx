@@ -4,7 +4,7 @@ import useLazyImport from "@/base/hooks/lazy-import.hook";
 import Orders from "./orders";
 
 const OrdersRoutes: FC = () => {
-  const OrderDetail = useLazyImport(() => import("./orders"));
+  const OrderDetail = useLazyImport(() => import("./views/detail/detail"));
 
   return (
     <Routes>
