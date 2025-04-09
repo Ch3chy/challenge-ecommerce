@@ -27,7 +27,7 @@ const Base: FC = () => {
         ? [
             {
               icon: "Note",
-              path: "/pedidos",
+              path: "/orders",
               label: "Pedidos",
             } as MenuItemProps,
           ]

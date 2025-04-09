@@ -13,6 +13,9 @@ const BaseRoutes: FC = () => {
   const UsersRoutes = useLazyImport(
     () => import("@/modules/users/users.routes")
   );
+  const OrdersRoutes = useLazyImport(
+    () => import("@/modules/orders/orders.routes")
+  );
 
   return (
     <Routes>
@@ -38,6 +41,14 @@ const BaseRoutes: FC = () => {
           element={
             <Suspense>
               <UsersRoutes />
+            </Suspense>
+          }
+        />
+        <Route
+          path="orders/*"
+          element={
+            <Suspense>
+              <OrdersRoutes />
             </Suspense>
           }
         />
