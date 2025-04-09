@@ -28,6 +28,18 @@ Sigue estos pasos para ejecutar la aplicación en tu entorno local:
 
 4. Abre tu navegador y accede a la URL proporcionada (por defecto, `http://localhost:5173`).
 
+5. Ejecuta los tests para asegurarte de que todo funciona correctamente:
+
+   ```sh
+   npm run test
+   ```
+
+   Si deseas ejecutar los tests en modo observación para desarrollo continuo, utiliza:
+
+   ```sh
+   npm run test:watch
+   ```
+
 ## 🛠️ Generar el build
 
 Para generar el build de producción, ejecuta el siguiente comando desde el directorio de la aplicación:
