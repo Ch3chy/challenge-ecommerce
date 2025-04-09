@@ -61,6 +61,12 @@ Puedes acceder a la aplicación desplegada en el siguiente enlace:
 4. **Integración con Git**: Compatible con el repositorio de GitHub
 5. **Historial de Despliegues**: Permite revertir fácilmente a versiones anteriores en caso de errores.
 
+### 📌 Vista del proceso en Amplify
+
+A continuación, se muestra una imagen del flujo de despliegue en AWS Amplify:
+
+![CI/CD con AWS Amplify](../assets/deploy-app.png)
+
 ### 📌 Cómo funciona
 
 1. **Conexión del Repositorio**: Amplify está conectado al repositorio de GitHub del proyecto.

@@ -85,6 +85,12 @@ Puedes acceder al Storybook desplegado en el siguiente enlace: [Storybook - Chec
 
 Y al Chronomatic en el siguiente link: [Chronomatic](https://www.chromatic.com/library?appId=67f0e6620850b0c0086cf36f&branch=main)
 
+### 📌 Vista del pipeline de Chronomatic
+
+A continuación, se muestra una imagen del flujo de publicacion en Chronomatic:
+
+![CI/CD con AWS Amplify](../assets/deploy-ui.png)
+
 ## 🚀 Publicación en npm
 
 Para publicar la librería en npm, asegúrate de haber iniciado sesión en tu cuenta de npm:
